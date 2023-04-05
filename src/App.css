@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-bar {
+  background-color: rgb(84, 84, 84);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 5rem;
+}
+
+.nav-bar ul {
+  display: flex;
+
+  /* justify-content: center; */
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: beige;
+  padding-left: 2rem;
+}
+
+.logo {
+  color: beige;
+  font-size: 2rem;
+}
+
+.book-wrapper {
+  margin: 5rem 3rem 1rem 2rem;
+  border-radius: 5px;
+  max-width: 40rem;
+  background-color: rgb(255, 255, 251);
+  padding: 1rem;
+}
+
+.books li {
+  list-style: none;
+  padding: 5px 4rem;
+}
+
+form input,
+.submit {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 10px auto;
+}
+
+.submit {
+  margin-left: 52%;
+}
+
+.btn {
+  color: beige;
+  margin-left: 1rem;
+  border-radius: 5px;
+  padding: 15px;
+}
