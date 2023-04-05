@@ -7,7 +7,7 @@ const BookList = ({ books }) => (
       <div className="books" key={book.id}>
         <ul>
           <li>{book.title}</li>
-          <li style={{ paddingLeft: '2rem' }}>
+          <li style={{ paddingLeft: '6rem' }}>
             <span style={{ fontWeight: '700', fontSize: '20px' }}> by </span>
             {book.author}
           </li>

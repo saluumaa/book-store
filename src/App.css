@@ -43,14 +43,14 @@
 .book-wrapper {
   margin: 5rem 3rem 1rem 2rem;
   border-radius: 5px;
-  max-width: 50rem;
-  background-color: beige;
+  max-width: 40rem;
+  background-color: rgb(255, 255, 251);
   padding: 1rem;
 }
 
 .books li {
   list-style: none;
-  padding-top: 5px;
+  padding: 3px 4rem;
 }
 
 form input,

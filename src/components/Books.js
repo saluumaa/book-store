@@ -7,18 +7,18 @@ const Books = () => {
   const [books, setBooks] = useState([
     {
       id: uuidv4(),
-      title: 'Book 1',
-      author: 'Salma',
+      title: 'The Hunger Games',
+      author: 'Suzzanne Collins',
     },
     {
       id: uuidv4(),
-      title: 'Book 2',
-      author: 'Hafsa',
+      title: 'Dune',
+      author: 'Frank Herbert',
     },
     {
       id: uuidv4(),
-      title: 'Book 3',
-      author: 'Zainab',
+      title: 'Capital in the Twenty-First Century',
+      author: 'Suzzanne Collins',
     },
   ]);
 
