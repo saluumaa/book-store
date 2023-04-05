@@ -1,9 +1,8 @@
-// import React from "react";
-// import Books from "./Books";
-// const Home = () => {
-//     return (
-//         <Books />
-//     )
-// }
+import React from 'react';
+import Books from './Books';
 
-// export default Home;
+const Home = () => (
+  <Books />
+);
+
+export default Home;

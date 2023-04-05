@@ -37,7 +37,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link](https://saluumaa.github.io/book-store/)
+[Not available yet]()
 
 
 ## Getting Started

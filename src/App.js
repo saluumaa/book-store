@@ -7,27 +7,21 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Books from './components/Books';
-// import Home from './components/Home';
+import Home from './components/Home';
 import Categories from './components/Categories';
 import Layout from './components/Layout';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<Books />} />
+      <Route index element={<Home />} />
       <Route path="/Categories" element={<Categories />} />
     </Route>,
-
   ),
 );
 function App() {
   return (
     <RouterProvider router={router} />
-    // <div>
-    //   <Books />
-    //   <Categories />
-    // </div>
   );
 }
 
