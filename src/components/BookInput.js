@@ -12,19 +12,19 @@ const BookInput = ({addNewBook}) => {
     }
 
     return (
-       <>
+       <div className="form-wrapper">
        <form onSubmit={handleSubmit} className="form-container" >
             <input className="title" type="text" 
-            placeholder="title" 
+            placeholder="Title" 
             value={title}
             onChange={(e) => setTitle(e.target.value)}/>
             <input className="author" type="text" 
-            placeholder="author" 
+            placeholder="Author" 
             value={author}
             onChange={(e) => setAuthor(e.target.value)}/>
-            <button type="submit">Submit</button>
+            <button type="submit" className="submit">Submit</button>
        </form>
-       </>
+       </div>
     )
 }
 

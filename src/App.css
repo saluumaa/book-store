@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+  background-color: rgb(84, 84, 84);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar ul {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: beige;
+  padding-left: 2rem;
+}
+
+.logo {
+  color: beige;
+  font-size: 2rem;
+}
+
+.book-wrapper {
+  margin: 5rem 3rem 1rem 2rem;
+  border-radius: 5px;
+  max-width: 50rem;
+  background-color: beige;
+  padding: 1rem;
+}
+
+.books li {
+ list-style: none;
+ padding-top: 5px;
+}
+
+form input,.submit {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  margin: 10px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.submit {
+  margin-left: 52%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  color: beige;
+  margin-left: 1rem;
+  border-radius: 5px;
+  padding: 15px;
 }
