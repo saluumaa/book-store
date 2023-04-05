@@ -1,12 +1,10 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React from 'react';
+import Navbar from './Navbar';
 
-const Layout = () => {
-    return (
-        // <div className="layout">
-        <Navbar />
-      
-    )
-}
+const Layout = () => (
+  // <div className="layout">
+  <Navbar />
+
+);
 
 export default Layout;
