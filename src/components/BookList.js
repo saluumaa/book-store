@@ -13,14 +13,10 @@ const BookList = () => {
     <div className="book-wrapper">
       {books.map((book) => (
         <div className="books" key={book.id}>
-          <ul>
-            <li>{book.category}</li>
-            <li>{book.title}</li>
-            <li style={{ paddingLeft: '6rem' }}>
-              <span style={{ fontWeight: '700', fontSize: '20px' }}> by </span>
-              {book.author}
-            </li>
-          </ul>
+          <h4>{book.category}</h4>
+          <strong>{book.title}</strong>
+          <span style={{ fontWeight: '900', fontSize: '23px' }}> by </span>
+          <p>{book.author}</p>
           <button
             type="button"
             className="remove-btn"
