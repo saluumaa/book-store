@@ -46,28 +46,19 @@
   max-width: 40rem;
   background-color: rgb(255, 255, 251);
   padding: 1rem;
-}
-
-.books li {
-  list-style: none;
-  padding: 5px 4rem;
+  border-bottom: 1px solid;
 }
 
 form input,
-.submit {
-  display: flex;
-  flex-direction: column;
+.submit,
+#category {
   padding: 15px;
-  margin: 10px auto;
+  margin: 10px;
 }
 
-.submit {
-  margin-left: 52%;
-}
-
-.btn {
-  color: beige;
-  margin-left: 1rem;
-  border-radius: 5px;
-  padding: 15px;
+.remove-btn {
+  padding: 8px 12px;
+  margin: 5px 1.5rem;
+  background-color: beige;
+  font-size: 18px;
 }

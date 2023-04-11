@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
-const BookInput = ({ addNewBook }) => {
+const BookInput = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-
+  const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    addNewBook(title, author);
+    dispatch(addBook({
+      id: uuidv4(), title, author, category,
+    }));
     setTitle('');
     setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -29,14 +35,17 @@ const BookInput = ({ addNewBook }) => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
+        <select id="category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="">Please choose prefered category</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="mystery">Mystery</option>
+          <option value="sci-fi">Science Fiction</option>
+        </select>
         <button type="submit" className="submit">Submit</button>
       </form>
     </div>
   );
-};
-
-BookInput.propTypes = {
-  addNewBook: PropTypes.func.isRequired,
 };
 
 export default BookInput;
