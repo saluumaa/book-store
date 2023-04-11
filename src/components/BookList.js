@@ -1,12 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
-/* eslint-disable react/prop-types */
+
 const BookList = () => {
-  // const {
-  //   id, title, author, category,
-  // } = useSelector((state) => state.allBooks.books);
   const books = useSelector((state) => state.allBooks.books);
   const dispatch = useDispatch();
   return (
@@ -32,16 +28,5 @@ const BookList = () => {
     </div>
   );
 };
-
-// BookList.propTypes = {
-//   books: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       item_id: PropTypes.number.isRequired,
-//       title: PropTypes.string.isRequired,
-//       author: PropTypes.string.isRequired,
-//       category: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-// };
 
 export default BookList;
