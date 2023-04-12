@@ -6,7 +6,7 @@
 
 .nav-bar {
   background-color: rgb(84, 84, 84);
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -20,8 +20,6 @@
 
 .nav-bar ul {
   display: flex;
-
-  /* justify-content: center; */
   align-items: center;
   list-style: none;
   gap: 30px;
@@ -59,6 +57,9 @@ form input,
 .remove-btn {
   padding: 8px 12px;
   margin: 5px 1.5rem;
-  background-color: bisque;
   font-size: 18px;
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: underline;
 }

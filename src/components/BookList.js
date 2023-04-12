@@ -27,15 +27,18 @@ const BookList = () => {
           <strong>{book.title}</strong>
           <span style={{ fontWeight: '900', fontSize: '23px' }}> by </span>
           <h3>{book.author}</h3>
-          <button
-            type="button"
-            className="remove-btn"
-            onClick={() => {
-              dispatch(removeBook(book.item_id));
-            }}
-          >
-            remove
-          </button>
+          <a href="#button">
+            <button
+              type="button"
+              id="button"
+              className="remove-btn"
+              onClick={() => {
+                dispatch(removeBook(book.item_id));
+              }}
+            >
+              remove
+            </button>
+          </a>
         </div>
       ))}
 
