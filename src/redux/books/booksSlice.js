@@ -12,8 +12,8 @@ export const addBook = createAsyncThunk('books/addBook', async (book) => {
 });
 
 export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
-  const result = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/fufeDynjNNBgUwQ8q2lJ/books/${id}`);
-  return result.data;
+  await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/fufeDynjNNBgUwQ8q2lJ/books/${id}`);
+  return id;
 });
 
 const initialState = {
@@ -76,18 +76,14 @@ const booksSlice = createSlice({
       state.isLoading = false;
       state.error = true;
     });
-    builder.addCase(removeBook.pending, (state) => ({
-      ...state,
-      success: false,
-    }));
     builder.addCase(removeBook.fulfilled, (state, action) => {
-      state.books = state.books.filter((book) => book.item_id !== action.payload);
-      state.isLoading = false;
+      const id = action.payload;
+      state.books = state.books.filter((book) => book.item_id !== id);
       state.error = false;
     });
     builder.addCase(removeBook.rejected, (state) => ({
       ...state,
-      success: false,
+      error: true,
     }));
   },
 });
