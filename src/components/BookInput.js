@@ -9,10 +9,6 @@ const BookInput = () => {
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getBooks());
-  // }, [dispatch]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addBook({
