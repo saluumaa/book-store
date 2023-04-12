@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, addNewBook } from '../redux/books/booksSlice';
 
 const BookInput = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getBooks());
+  // }, [dispatch]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addBook({
-      id: uuidv4(), title, author, category,
-    }));
+      item_id: uuidv4(),
+      category,
+      title,
+      author,
+    }))
+      .then(() => dispatch(addNewBook({
+        item_id: uuidv4(),
+        category,
+        title,
+        author,
+      })));
     setTitle('');
     setAuthor('');
     setCategory('');
@@ -36,7 +50,6 @@ const BookInput = () => {
           onChange={(e) => setAuthor(e.target.value)}
         />
         <select id="category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Please choose prefered category</option>
           <option value="fiction">Fiction</option>
           <option value="non-fiction">Non-Fiction</option>
           <option value="mystery">Mystery</option>
