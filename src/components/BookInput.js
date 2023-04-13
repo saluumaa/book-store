@@ -12,7 +12,7 @@ const BookInput = () => {
     lineHeight: 'normal',
     letterSpacing: '-0.18px',
     color: '#888',
-    margin: '1.188rem 2.125rem 0 6.18rem',
+    margin: '0.188rem 2.125rem 0 6.18rem',
     padding: '0.813rem 35.688rem 0.813rem 1.063rem',
   };
   const [title, setTitle] = useState('');

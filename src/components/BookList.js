@@ -52,54 +52,57 @@ const BookList = () => {
   }
 
   return (
-    <div className="book-wrapper">
+    <div className="main-wrapper">
       {books.map((book) => (
-        <div className="books" key={uuidv4()}>
-          <p className="par category" style={categoryStyle}>{book.category}</p>
-          <p className="title" style={titleStyle}>{book.title}</p>
-          <p
-            className="par author"
-            style={authorStyle}
-          >
-            {book.author}
-          </p>
-          <button className="btn comments-btn" type="button">Comments</button>
-          <span className="left-line" />
-          <button
-            type="button"
-            id="button"
-            className="btn remove-btn"
-            onClick={() => {
-              dispatch(removeBook(book.item_id));
-            }}
-          >
-            remove
-          </button>
-          <span className="left-line" />
-          <button type="button" className="btn edit-btn">Edit</button>
+        <div className="book-wrapper" key={uuidv4()}>
+          <div className="books">
+            <p className="par category" style={categoryStyle}>{book.category}</p>
+            <p className="title" style={titleStyle}>{book.title}</p>
+            <p
+              className="par author"
+              style={authorStyle}
+            >
+              {book.author}
+            </p>
+            <button className="btn comments-btn" type="button">Comments</button>
+            <span className="left-line" />
+            <button
+              type="button"
+              id="button"
+              className="btn remove-btn"
+              onClick={() => {
+                dispatch(removeBook(book.item_id));
+              }}
+            >
+              remove
+            </button>
+            <span className="left-line" />
+            <button type="button" className="btn edit-btn">Edit</button>
+          </div>
+
+          <div className="wrapper">
+            <div className="progress">
+              <CircularProgressbar className="progress-bar" value={70} />
+            </div>
+            <div className="percentage">
+              <h3 style={{ margin: '0.063rem 0 0 0.688rem', fontSize: '2rem' }}>64%</h3>
+              <p style={{
+                margin: '0.438rem 0 0.75rem 0.75rem', opacity: '0.5', fontSize: '0.875rem', color: '121212',
+              }}
+              >
+                Completed
+              </p>
+            </div>
+            <span className="left-line2" />
+            <div className="chapter-info">
+              <h3 className="current-chap">Current Chapter</h3>
+              <h3 style={chapterNo}>Chapter 17</h3>
+              <button type="button" className="update-btn">UPDATE PROGRESS</button>
+            </div>
+          </div>
         </div>
       ))}
-
-      <div className="wrapper">
-        <div className="progress">
-          <CircularProgressbar className="progress-bar" value={70} />
-        </div>
-        <div className="percentage">
-          <h3 style={{ margin: '0.063rem 0 0 0.688rem', fontSize: '2rem' }}>64%</h3>
-          <p style={{
-            margin: '0.438rem 0 0.75rem 0.75rem', opacity: '0.5', fontSize: '0.875rem', color: '121212',
-          }}
-          >
-            Completed
-          </p>
-        </div>
-        <span className="left-line2" />
-        <div className="chapter-info">
-          <h3 className="current-chap">Current Chapter</h3>
-          <h3 style={chapterNo}>Chapter 17</h3>
-          <button type="button" className="update-btn">UPDATE PROGRESS</button>
-        </div>
-      </div>
+      <span className="line" />
     </div>
   );
 };
