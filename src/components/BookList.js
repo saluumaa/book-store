@@ -23,10 +23,9 @@ const BookList = () => {
     <div className="book-wrapper">
       {books.map((book) => (
         <div className="books" key={uuidv4()}>
-          <h2>{book.category}</h2>
-          <strong>{book.title}</strong>
-          <span style={{ fontWeight: '900', fontSize: '23px' }}> by </span>
-          <h3>{book.author}</h3>
+          <p className="par category">{book.category}</p>
+          <p className="title">{book.title}</p>
+          <p className="par author">{book.author}</p>
           <button
             type="button"
             id="button"
