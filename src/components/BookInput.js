@@ -5,7 +5,15 @@ import { addBook, addNewBook } from '../redux/books/booksSlice';
 
 const BookInput = () => {
   const titleStyele = {
-    
+    fontSize: '1.25rem',
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: '-0.18px',
+    color: '#888',
+    margin: '1.188rem 2.125rem 0 1rem',
+    padding: '0.813rem 35.688rem 0.813rem 1.063rem',
   };
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
