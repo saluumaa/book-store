@@ -1,14 +1,13 @@
 import React from 'react';
 
 const Categories = () => (
-  <button
-    type="button"
-    className="btn-status"
+  <h1
+    className="status"
     style={{
-      marginTop: '7rem', color: 'black', fontSize: '25px', padding: '10px',
+      marginTop: '7rem', color: '#121212', fontSize: '25px', fontWeight: 'bold',
     }}
   >
-    Check Status
-  </button>
+    Under Construction
+  </h1>
 );
 export default Categories;

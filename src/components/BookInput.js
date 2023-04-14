@@ -69,7 +69,7 @@ const BookInput = () => {
           <option value="mystery">Mystery</option>
           <option value="sci-fi">Science Fiction</option>
         </select>
-        <button type="submit" className="submit">Submit</button>
+        <button type="submit" className="pointer submit">Submit</button>
       </form>
     </div>
   );

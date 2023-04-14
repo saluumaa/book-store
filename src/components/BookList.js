@@ -6,35 +6,33 @@ import { removeBook, getBooks } from '../redux/books/booksSlice';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookList = () => {
+  const randomChapter = Math.floor(Math.random() * 20) + 1;
+  const progress = randomChapter === 4 ? 20 : Math.floor(Math.random() * 81) + 20;
+  const percentage = `${progress}%`;
   const categoryStyle = {
     fontSize: '0.875rem',
-    fontFamily: 'Montserrat, sans-serif',
-    color: '#121212',
     margin: '0 2.438rem 0 0',
-    fontWeight: 'bold',
+    opacity: '.5',
   };
   const titleStyle = {
     margin: '0.188rem 2.188rem 0 0',
-    fontFamily: 'Roboto Slab, serif',
     fontSize: '1.375rem',
-    color: '#121212',
+    fontWeight: 'bold',
     letterSpacing: '-0.2px',
   };
   const authorStyle = {
     margin: '0.25rem 0 0',
-    fontFamily: 'Roboto Slab, serif',
     fontSize: '0.875rem',
     fontWeight: '300',
     color: '#4386bf',
+    opacity: '0.5',
   };
   const chapterNo = {
     margin: '0.438rem 2.813rem 0.25rem 3.688rem',
-    fontFamily: 'Roboto Slab, serif',
     fontSize: '1rem',
     fontWeight: '300',
     fontStretch: 'normal',
     letterSpacing: '-0.4px',
-    color: '121212',
   };
   const { books, isLoading, error } = useSelector((state) => state.books);
   const dispatch = useDispatch();
@@ -54,55 +52,57 @@ const BookList = () => {
   return (
     <div className="main-wrapper">
       {books.map((book) => (
-        <div className="book-wrapper" key={uuidv4()}>
+        <div className="book-wrapper flex" key={uuidv4()}>
           <div className="books">
-            <p className="par category" style={categoryStyle}>{book.category}</p>
-            <p className="title" style={titleStyle}>{book.title}</p>
+            <p className="black category" style={categoryStyle}>{book.category}</p>
+            <p className="black Roboto title" style={titleStyle}>{book.title}</p>
             <p
-              className="par author"
+              className="Roboto author"
               style={authorStyle}
             >
               {book.author}
             </p>
-            <button className="btn comments-btn" type="button">Comments</button>
-            <span className="left-line" />
+            <button className="pointer Roboto btn comments-btn" type="button">Comments</button>
+            <span className="left-line border" />
             <button
               type="button"
               id="button"
-              className="btn remove-btn"
+              className="pointer Roboto btn remove-btn"
               onClick={() => {
                 dispatch(removeBook(book.item_id));
               }}
             >
               remove
             </button>
-            <span className="left-line" />
-            <button type="button" className="btn edit-btn">Edit</button>
+            <span className="left-line border" />
+            <button type="button" className="pointer Roboto btn edit-btn">Edit</button>
           </div>
 
-          <div className="wrapper">
+          <div className="wrapper flex">
             <div className="progress">
-              <CircularProgressbar className="progress-bar" value={70} />
+              <CircularProgressbar className="progress-bar" value={progress} />
             </div>
             <div className="percentage">
-              <h3 style={{ margin: '0.063rem 0 0 0.688rem', fontSize: '2rem' }}>64%</h3>
-              <p style={{
-                margin: '0.438rem 0 0.75rem 0.75rem', opacity: '0.5', fontSize: '0.875rem', color: '121212',
-              }}
+              <h3 style={{ margin: '0.063rem 0 0 0.688rem', fontSize: '2rem' }}>{percentage}</h3>
+              <p
+                className="black"
+                style={{
+                  margin: '0.438rem 0 0.75rem 0.75rem', opacity: '0.5', fontSize: '0.875rem',
+                }}
               >
                 Completed
               </p>
             </div>
-            <span className="left-line2" />
+            <span className="left-line2 border" />
             <div className="chapter-info">
-              <h3 className="current-chap">Current Chapter</h3>
-              <h3 style={chapterNo}>Chapter 17</h3>
-              <button type="button" className="update-btn">UPDATE PROGRESS</button>
+              <h3 className="Roboto current-chap">CURRENT CHAPTER</h3>
+              <h3 className="black Roboto" style={chapterNo}>{`chapter ${randomChapter}`}</h3>
+              <button type="button" className="pointer update-btn">UPDATE PROGRESS</button>
             </div>
           </div>
         </div>
       ))}
-      <span className="line" />
+      <span className="line border" />
     </div>
   );
 };

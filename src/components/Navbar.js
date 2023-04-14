@@ -4,13 +4,13 @@ import { FaUser } from 'react-icons/fa';
 const Navbar = () => (
   <>
     <header>
-      <nav className="nav-bar">
-        <ul>
+      <nav className="pointer flex nav-bar">
+        <ul className="flex">
           <div className="logo">BOOKSTORE</div>
-          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/" className="black">Home</NavLink></li>
           <li><NavLink to="/categories">Categories</NavLink></li>
         </ul>
-        <div className="profile-icon">
+        <div className="pointer border profile-icon">
           <FaUser className="user-icon" />
         </div>
       </nav>
