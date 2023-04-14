@@ -4,6 +4,17 @@ import { useDispatch } from 'react-redux';
 import { addBook, addNewBook } from '../redux/books/booksSlice';
 
 const BookInput = () => {
+  const titleStyele = {
+    fontSize: '1.25rem',
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: '-0.18px',
+    color: '#888',
+    margin: '0.188rem 2.125rem 0 6.18rem',
+    padding: '0.813rem 35.688rem 0.813rem 1.063rem',
+  };
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
@@ -30,6 +41,7 @@ const BookInput = () => {
 
   return (
     <div className="form-wrapper">
+      <h2 style={titleStyele}>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit} className="form-container">
         <input
           className="title"
@@ -45,13 +57,19 @@ const BookInput = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <select id="category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          id="category"
+          name="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          style={{ paddingRight: '5px' }}
+        >
           <option value="fiction">Fiction</option>
           <option value="non-fiction">Non-Fiction</option>
           <option value="mystery">Mystery</option>
           <option value="sci-fi">Science Fiction</option>
         </select>
-        <button type="submit" className="submit">Submit</button>
+        <button type="submit" className="pointer submit">Submit</button>
       </form>
     </div>
   );
