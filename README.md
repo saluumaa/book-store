@@ -23,7 +23,7 @@
 
 ## About the Project
 
-> This project is built with React, it helps organise and save your favorite books.
+> This project is built with React, and allows users to create a list of books, remove them, and track their reading progress.
 
 ## Built With
 
@@ -33,7 +33,8 @@
 
 ### Key Features
 
-- Page Setup
+- Add Book
+- Remove Book
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -71,7 +72,8 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features
 
-- 3 sub-pages
+- Build category section
+- Add edit and comments functionality
 
 ## 🤝 Contributing <a name="contributing"></a>
 
